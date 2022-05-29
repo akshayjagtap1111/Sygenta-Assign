@@ -48,11 +48,11 @@ function App() {
             </div>
           ))}
         </div>
-        <hr></hr>
+    
         <div>
           {reduxstate.firstArr.map((el, i) => (
             <div key={i}>
-              <Balloon color={el.color} />
+              <Balloon color={el.color}/>
             </div>
           ))}
         </div>

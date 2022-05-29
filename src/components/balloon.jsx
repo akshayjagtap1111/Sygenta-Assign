@@ -8,7 +8,8 @@ const Circle = styled.div`
   width: 50px;
   margin: auto;
   border-radius: 100%;
-  margin: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
 `;
 
  function Balloon(props) {
