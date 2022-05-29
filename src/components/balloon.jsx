@@ -8,22 +8,14 @@ const Circle = styled.div`
   width: 50px;
   margin: auto;
   border-radius: 100%;
+  margin: 10px;
 `;
 
- function Balloon() {
-
- const color = useMemo(()=>{
-  let r= Math.floor(Math.random() * 101);
-  let g =Math.floor(Math.random() * 101);
-  let b =Math.floor(Math.random() * 101)
+ function Balloon(props) {
 
 
-  const back_color =`rgb(${r},${g},${b})`
-  console.log(back_color)
-  return back_color
- },[])
 
-  return <Circle style={{"backgroundColor":color}}>
+  return <Circle style={{"backgroundColor":props.color}}>
 
   </Circle>
 }

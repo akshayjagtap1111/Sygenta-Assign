@@ -14,12 +14,12 @@ export const arrReducer = (state = initstate, { type, payload }) => {
       };
 
     case PUSH:
-      let id = payload.id;
+      let id = payload - 1;
       let first_arr = state.firstArr;
       let second_arr = state.secondArr;
 
       for (let i = 0; i < first_arr.length; i++) {
-        if (first_arr[i].id == id) {
+        if (i == id) {
           let poped = first_arr.splice(i, 1);
           second_arr.push(poped[0]);
           break;
@@ -32,9 +32,25 @@ export const arrReducer = (state = initstate, { type, payload }) => {
       };
 
     case REGAIN:
-        return state;
+      let el = payload;
+      let firstarr = state.firstArr;
+      let secondarr = state.secondArr;
+
+      for (let i = 0; i < secondarr.length; i++) {
+        if (el.id == secondarr[i].id) {
+          let poped = secondarr.splice(i, 1);
+          firstarr.push(poped[0]);
+          break;
+        }
+      }
+      firstarr.sort((a, b) => a.id - b.id);
+      return {
+        ...state,
+        firstArr: firstarr,
+        secondArr: secondarr,
+      };
 
     default:
-        return state;
+      return state;
   }
 };
