@@ -1,11 +1,20 @@
 .App {
   text-align: center;
-  
 }
 #sub {
   display: flex;
-  padding: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-bottom: 20px;
   justify-content: center;
+  height: 300px;
 }
 
+#sub > div:nth-child(2) {
+  background-color: aqua;
+  display: flex;
+}
 
+.sec_sub {
+  display: flex;
+}
